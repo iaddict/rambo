@@ -35,7 +35,7 @@ defmodule Mix.Tasks.Compile.Rambo do
 
   @filename filename
   def find_rambo do
-    Path.join(@priv_dir, @filename)
+    System.get_env("RAMBO_PATH", Path.join(@priv_dir, @filename))
   end
 
   def run(["bundled"]) do
